@@ -1,0 +1,5 @@
+book_filename: "techreport"
+rmd_files: ["index.Rmd",
+            "01-introduction.Rmd",
+            "02-equations.Rmd"]
+delete_merged_file: true
