@@ -1,0 +1,4 @@
+# INTRODUCTION
+
+This is the introduction for the salmonMSE model. 
+
