@@ -102,6 +102,7 @@ flextable::set_flextable_defaults(
 ```{r load-libraries-user}
 library(dplyr) # used in examples in template example
 library(ggplot2) # used in examples in template example
-library(equatags)
+library(equatags) # used to make tables using flextable
+#equatags::mathjax_install()
 # add more packages here as needed
 ```

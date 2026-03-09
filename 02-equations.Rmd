@@ -14,47 +14,58 @@ salmonMSE utilizes an age-structured model in the projections. The population is
 param <- read.csv("tables/glossary.csv") 
 ```
 
-```{r Natural Production Parameters, tab.cap = "Table showing random numbers."}
-param_NP <- param[grepl("Natural production|Population dynamics", param$Type), ] %>% select(-Type)
+```{r Natural_Production_Parameters, tab.cap = "Natural production parameters"} 
+# If put more words in tab.cap get error
+param_NP <- param[grepl("Natural production|Population dynamics", param$Type), ] |>
+  select(-Type) 
 flextable(param_NP) |> 
-  compose(j = "Name", value = as_paragraph(as_equation(Name)))
-  set_table_properties(layout = "autofit") |>
-  set_caption(caption = "Parameters related to natural production and population dynamics.")
+  compose(j = "Name", value = as_paragraph(as_equation(Name))) |>
+  set_table_properties(layout = "autofit") 
+  #set_caption(caption = "Parameters related to natural production and population dynamics.")
+
 ```
 
-<!-- ## Habitat -->
+## Habitat
 
-<!-- ```{r param-habitat, echo = FALSE} -->
-<!-- param_hab <- param[grepl("Habitat", param$Type), ] %>% select(-Type) -->
-<!-- knitr::kable(param_hab, row.names = FALSE) -->
-<!-- ``` -->
+```{r Habitat_Parameters, tab.cap = "Habitat parameters"}
+ param_hab <- param[grepl("Habitat", param$Type), ] |> select(-Type)
+ flextable(param_hab) |>
+   compose(j = "Name", value = as_paragraph(as_equation(Name)))|>
+   set_table_properties(layout = "autofit")
+   #set_caption(caption = "Parameters related to habitat.")
+```
 
-<!-- ## Hatchery -->
+## Hatchery
 
-<!-- ```{r param-hatchery, echo = FALSE} -->
-<!-- param_hatch <- param[grepl("Hatchery|Fitness", param$Type) ,] %>% select(-Type) -->
-<!-- knitr::kable(param_hatch, row.names = FALSE) -->
-<!-- ``` -->
+```{r Hatchery_Parameters, tab.cap = "Parameters related to hatchery production"}
+param_hatch <- param[grepl("Hatchery|Fitness", param$Type) ,] |> select(-Type)
+flextable(param_hatch) |>
+  compose(j = "Name", value = as_paragraph(as_equation(Name)))|>
+  set_table_properties(layout = "autofit") 
+```
 
-<!-- ## Harvest -->
 
-<!-- ```{r param-harvest, echo = FALSE} -->
-<!-- param_harv <- param[grepl("Harvest", param$Type), ] %>% select(-Type) -->
-<!-- knitr::kable(param_harv, row.names = FALSE) -->
-<!-- ``` -->
+## Harvest
 
-# Natural production
+```{r Harvest_Parameters, tab.cap = "Parameters related to Harvest."}
+param_harv <- param[grepl("Harvest", param$Type), ] |> select(-Type)
+flextable(param_harv) |>
+  compose(j = "Name", value = as_paragraph(as_equation(Name))) |>
+  set_table_properties(layout = "autofit") 
+```
 
-First, we consider natural production in the absence of fitness effects arising from hatchery production.
+<!-- # Natural production -->
 
-## Spawning output
+<!-- First, we consider natural production in the absence of fitness effects arising from hatchery production. -->
 
-From the spawners (NOS and HOS) of age $a$ in year $y$, the corresponding spawning output (units of eggs) of the subsequent generation is calculated as:
+<!-- ## Spawning output -->
 
-\begin{align}
-\textrm{Egg}^\textrm{NOS}_y &= \sum_a\textrm{NOS}_{y,a} \times p^\textrm{female} \times \textrm{Fec}_a\\
-\textrm{Egg}^\textrm{HOS}_y &= \sum_a\textrm{HOS}_{\textrm{eff}y,a} \times p^\textrm{female} \times \textrm{Fec}_a
-\end{align}
+<!-- From the spawners (NOS and HOS) of age $a$ in year $y$, the corresponding spawning output (units of eggs) of the subsequent generation is calculated as: -->
+
+<!-- \begin{align} -->
+<!-- \textrm{Egg}^\textrm{NOS}_y &= \sum_a\textrm{NOS}_{y,a} \times p^\textrm{female} \times \textrm{Fec}_a\\ -->
+<!-- \textrm{Egg}^\textrm{HOS}_y &= \sum_a\textrm{HOS}_{\textrm{eff}y,a} \times p^\textrm{female} \times \textrm{Fec}_a -->
+<!-- \end{align} -->
 
 <!-- where $\textrm{HOS}_{\textrm{eff}} = \gamma \times \textrm{HOS}$ and the superscript denotes the parentage of the progeny. -->
 

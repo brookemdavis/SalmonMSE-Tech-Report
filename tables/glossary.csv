@@ -15,7 +15,7 @@ r,"Maturity at age, i.e., recruitment rate",Natural production,"SOM, Bio",p_matu
 \textrm{Fec}^\textrm{brood},Fecundity of broodtake (eggs per female),Hatchery,SOM,fec_brood
 p^\textrm{female},Proportion of female spawners in broodtake and spawners,Natural production,"SOM, Bio",p_female
 \textrm{SAR},Smolt-to-adult recruit survival,Natural production,-,-
-M,"Juvenile instantaneous natural mortality of juvenile (either the freshwater or marine environment by age class)",Natural production + Hatchery,"SOM, Bio","Mjuv_NOS, Mjuv_HOS"
+M,Juvenile instantaneous natural mortality of juvenile (either the freshwater or marine environment by age class),Natural production + Hatchery,"SOM, Bio","Mjuv_NOS, Mjuv_HOS"
 s_\textrm{enroute},Survival of escapement to spawning grounds and hatchery,Natural production,"SOM, Bio",s_enroute
 P^\textrm{inc},Productivity for density-dependent survival: egg incubation from spawning output,Habitat,SOM,egg_prod
 C^\textrm{inc},Capacity for density-dependent survival: egg incubation from spawning output,Habitat,SOM,egg_capacity
@@ -28,7 +28,7 @@ C^\textrm{fry-smolt},Capacity for density-dependent survival: fry to smolt life 
 \textrm{NOB},Natural origin broodtake,Hatchery,SMSE,NOB
 \textrm{HOB},Hatchery origin broodtake,Hatchery,SMSE,HOB
 \textrm{Stray},External strays of hatchery origin fish (considered 0% marked),Hatchery,SOM,stray_external
-\textrm{HOB_stray},Broodtake from strays,Hatchery,SMSE,HOB_stray
+\textrm{HOB}^\textrm{stray},Broodtake from strays,Hatchery,SMSE,HOB_stray
 "\textrm{Brood}^\textrm{avail,import}",Available imported brood (considered 100% marked HO fish),Hatchery,SOM,brood_import
 \textrm{Brood}^\textrm{import},Realized imported fish used for brood (considered 100% marked HO),Hatchery,SMSE,HOB_import
 s_\textrm{yearling},Survival of hatchery eggs to yearling life stage,Hatchery,SOM,s_egg_smolt
