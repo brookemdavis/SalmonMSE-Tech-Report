@@ -11,41 +11,50 @@ salmonMSE utilizes an age-structured model in the projections. The population is
 ## Natural production
 
 ```{r param-bio, echo = FALSE}
-param <- read.csv("tables/glossary.csv") %>%
-  mutate(Name = paste0("$", Name, "$"))
-knitr::kable(param[grepl("Natural production|Population dynamics", param$Type), ], row.names = FALSE)
+param <- read.csv("tables/glossary.csv") 
 ```
 
-## Habitat
-
-```{r param-habitat, echo = FALSE}
-knitr::kable(param[grepl("Habitat", param$Type), ], row.names = FALSE)
+```{r Natural Production Parameters, tab.cap = "Table showing random numbers."}
+param_NP <- param[grepl("Natural production|Population dynamics", param$Type), ] %>% select(-Type)
+flextable(param_NP) |> 
+  compose(j = "Name", value = as_paragraph(as_equation(Name)))
+  set_table_properties(layout = "autofit") |>
+  set_caption(caption = "Parameters related to natural production and population dynamics.")
 ```
+
+<!-- ## Habitat -->
+
+<!-- ```{r param-habitat, echo = FALSE} -->
+<!-- param_hab <- param[grepl("Habitat", param$Type), ] %>% select(-Type) -->
+<!-- knitr::kable(param_hab, row.names = FALSE) -->
+<!-- ``` -->
 
 <!-- ## Hatchery -->
 
 <!-- ```{r param-hatchery, echo = FALSE} -->
-<!-- knitr::kable(param[grepl("Hatchery|Fitness", param$Type), ], row.names = FALSE) -->
+<!-- param_hatch <- param[grepl("Hatchery|Fitness", param$Type) ,] %>% select(-Type) -->
+<!-- knitr::kable(param_hatch, row.names = FALSE) -->
 <!-- ``` -->
 
 <!-- ## Harvest -->
 
 <!-- ```{r param-harvest, echo = FALSE} -->
-<!-- knitr::kable(param[grepl("Harvest", param$Type), ], row.names = FALSE) -->
+<!-- param_harv <- param[grepl("Harvest", param$Type), ] %>% select(-Type) -->
+<!-- knitr::kable(param_harv, row.names = FALSE) -->
 <!-- ``` -->
 
-<!-- # Natural production -->
+# Natural production
 
-<!-- First, we consider natural production in the absence of fitness effects arising from hatchery production. -->
+First, we consider natural production in the absence of fitness effects arising from hatchery production.
 
-<!-- ## Spawning output -->
+## Spawning output
 
-<!-- From the spawners (NOS and HOS) of age $a$ in year $y$, the corresponding spawning output (units of eggs) of the subsequent generation is calculated as: -->
+From the spawners (NOS and HOS) of age $a$ in year $y$, the corresponding spawning output (units of eggs) of the subsequent generation is calculated as:
 
-<!-- \begin{align} -->
-<!-- \textrm{Egg}^\textrm{NOS}_y &= \sum_a\textrm{NOS}_{y,a} \times p^\textrm{female} \times \textrm{Fec}_a\\ -->
-<!-- \textrm{Egg}^\textrm{HOS}_y &= \sum_a\textrm{HOS}_{\textrm{eff}y,a} \times p^\textrm{female} \times \textrm{Fec}_a -->
-<!-- \end{align} -->
+\begin{align}
+\textrm{Egg}^\textrm{NOS}_y &= \sum_a\textrm{NOS}_{y,a} \times p^\textrm{female} \times \textrm{Fec}_a\\
+\textrm{Egg}^\textrm{HOS}_y &= \sum_a\textrm{HOS}_{\textrm{eff}y,a} \times p^\textrm{female} \times \textrm{Fec}_a
+\end{align}
 
 <!-- where $\textrm{HOS}_{\textrm{eff}} = \gamma \times \textrm{HOS}$ and the superscript denotes the parentage of the progeny. -->
 
