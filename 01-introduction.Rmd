@@ -1,4 +1,4 @@
 # INTRODUCTION
 
-This is the introduction for the salmonMSE model. 
+salmonMSE utilizes an age-structured model in the projections. The population is tracked by age and year but various dynamics correspond to the salmon life stages as described below.
 
