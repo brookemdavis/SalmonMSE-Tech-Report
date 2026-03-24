@@ -84,6 +84,7 @@ opts_chunk$set(
 ```{r load-libraries-csasdown}
 library(csasdown) # for new_appendix(), current_appendix(), appendix_table_caption()
 library(flextable) # recommended package for adding tables
+library(ftExtra)
 ```
 
 ```{r table-settings}

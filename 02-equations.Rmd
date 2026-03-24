@@ -636,4 +636,18 @@ The exploitation rate for natural origin fish is calculated from dead discards. 
  (\#eq:ExpRateMS)
 \end{align}
 
+```{r equation-table, echo = FALSE}
+Equations <- read.csv("tables/EquationTable.csv")
+
+```
+
+```{r Equation_Table, tab.cap = "List of equations, and where they exist in the model code."} 
+ flextable(Equations) |>
+  # ftExtra::colformat_md(j="Eq_Num", metadata = rmarkdown::metadata) |>
+   compose(j = "Eq_Num", value = as_paragraph(Eq_Num)) |>
+   set_table_properties(layout = "autofit")
+#can't get references to show up in a table
+
+```
+
 
