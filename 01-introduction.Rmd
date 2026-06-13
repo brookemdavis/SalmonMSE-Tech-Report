@@ -2,3 +2,4 @@
 
 salmonMSE utilizes an age-structured model in the projections. The population is tracked by age and year but various dynamics correspond to the salmon life stages as described below.
 
+The model is also stochastic, for example, biological parameters representing uncertainty in the state of nature can be drawn from a probability distribution. For simplicity, the equations here describe the dynamics in a single simulation run. Potential stochastic parameters are noted in the package documentation.
